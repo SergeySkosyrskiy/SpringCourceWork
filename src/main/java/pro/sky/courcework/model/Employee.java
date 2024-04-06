@@ -1,4 +1,4 @@
-package pro.sky.courcework;
+package pro.sky.courcework.model;
 
 public class Employee {
     private final String firstName;

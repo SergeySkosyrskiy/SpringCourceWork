@@ -1,6 +1,8 @@
-package pro.sky.courcework;
+package pro.sky.courcework.controller;
 
 import org.springframework.web.bind.annotation.*;
+import pro.sky.courcework.model.Employee;
+import service.EmployeeService;
 
 
 import java.util.List;
@@ -15,10 +17,9 @@ public class EmployeeController {
     }
 
     @GetMapping("/add")
-    public Employee addEmployee(@RequestParam String firstName, @RequestParam String lastName){
-        return   employeeService.addEmployee(firstName,lastName);
+    public Employee addEmployee(@RequestParam String firstName, @RequestParam String lastName) {
+        return employeeService.addEmployee(firstName, lastName);
     }
-
 
 
     @GetMapping("/remove")
@@ -31,8 +32,8 @@ public class EmployeeController {
         return employeeService.findEmployee(firstName, lastName);
     }
 
-    @GetMapping("/list")
-    public List <Employee> getAllEmployees() {
+    @GetMapping
+    public List<Employee> getAllEmployees() {
         return employeeService.getAllEmployees();
 
     }

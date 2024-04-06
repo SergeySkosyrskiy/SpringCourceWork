@@ -1,12 +1,11 @@
-package pro.sky.courcework;
-
-import org.springframework.stereotype.Service;
+package service;
+import pro.sky.courcework.model.Employee;
 import pro.sky.courcework.exeption.EmployeeAlreadyAddedException;
 import pro.sky.courcework.exeption.EmployeeNotFoundException;
 import pro.sky.courcework.exeption.EmployeeStorageIsFullException;
 
 import java.util.List;
-@Service
+
 public interface EmployeeService  {
 
     Employee addEmployee(String name, String lastName) throws EmployeeStorageIsFullException, EmployeeAlreadyAddedException;

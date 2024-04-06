@@ -1,29 +1,26 @@
-package pro.sky.courcework;
+package service;
 
 import java.util.ArrayList;
 
 import org.springframework.stereotype.Service;
+import pro.sky.courcework.model.Employee;
 import pro.sky.courcework.exeption.EmployeeAlreadyAddedException;
 import pro.sky.courcework.exeption.EmployeeNotFoundException;
 import pro.sky.courcework.exeption.EmployeeStorageIsFullException;
 
+import java.util.Collection;
 import java.util.List;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
-    private final List<Employee> employees = new ArrayList<>(List.of(
+    private final List<Employee> employees;
 
+    public EmployeeServiceImpl(List<Employee> employees) {
+        this.employees = employees;
+    }
 
-            new Employee("Ivan", "Ivanov"),
-
-            new Employee("Semyon", "Gorbunkov"),
-
-            new Employee("Peter", " Petrov"),
-
-            new Employee("Nikolay", "Nikolaev"),
-
-            new Employee("Fedor", "Fedorov")));
     private static final int MAX_EMPLOYEES = 5;
+
 
     @Override
     public Employee addEmployee(String firstName, String lastName) throws EmployeeAlreadyAddedException, EmployeeStorageIsFullException {
@@ -57,7 +54,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<Employee> getAllEmployees() {
-        return employees;
+        return new ArrayList<>(employees);
     }
 
 }
