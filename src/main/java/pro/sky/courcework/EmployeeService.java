@@ -1,11 +1,23 @@
 package pro.sky.courcework;
 
-import java.util.ArrayList;
+import org.springframework.stereotype.Service;
+import pro.sky.courcework.exeption.EmployeeAlreadyAddedException;
+import pro.sky.courcework.exeption.EmployeeNotFoundException;
+import pro.sky.courcework.exeption.EmployeeStorageIsFullException;
+
 import java.util.List;
+@Service
+public interface EmployeeService  {
 
-public class EmployeeService {
+    Employee addEmployee(String name, String lastName) throws EmployeeStorageIsFullException, EmployeeAlreadyAddedException;
 
-List<Integer> employees = new ArrayList<>();
+    Employee removeEmployee(String name, String lastName) throws EmployeeNotFoundException;
 
+
+    Employee findEmployee(String name, String lastName) throws EmployeeNotFoundException;
+
+
+    List<Employee> getAllEmployees();
 
 }
+
