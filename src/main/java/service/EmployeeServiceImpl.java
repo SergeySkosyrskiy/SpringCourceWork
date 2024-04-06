@@ -24,10 +24,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee addEmployee(String firstName, String lastName) throws EmployeeAlreadyAddedException, EmployeeStorageIsFullException {
-        Employee newEmployee = new Employee(firstName, lastName);
+
         if (employees.size() >= MAX_EMPLOYEES) {
             throw new EmployeeStorageIsFullException("Хранилище для сотрудников заполнено");
         }
+        Employee newEmployee = new Employee(firstName, lastName);
         if (employees.contains(newEmployee)) {
             throw new EmployeeAlreadyAddedException("Сотрудник уже существует");
         }
