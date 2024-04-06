@@ -48,7 +48,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Employee findEmployee(String firstName, String lastName) {
         Employee employeeToFind = new Employee(firstName, lastName);
         if (!employees.contains(employeeToFind)) throw new EmployeeNotFoundException("Сотрудник не найден");
-
         return employees.get(employees.indexOf(employeeToFind));
     }
 
