@@ -1,4 +1,4 @@
-package service;
+package pro.sky.courcework.service;
 import pro.sky.courcework.model.Employee;
 import pro.sky.courcework.exeption.EmployeeAlreadyAddedException;
 import pro.sky.courcework.exeption.EmployeeNotFoundException;

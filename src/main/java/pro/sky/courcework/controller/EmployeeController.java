@@ -2,7 +2,7 @@ package pro.sky.courcework.controller;
 
 import org.springframework.web.bind.annotation.*;
 import pro.sky.courcework.model.Employee;
-import service.EmployeeService;
+import pro.sky.courcework.service.EmployeeService;
 
 
 import java.util.List;

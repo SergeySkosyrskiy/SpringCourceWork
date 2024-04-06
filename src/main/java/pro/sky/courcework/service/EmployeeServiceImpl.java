@@ -1,4 +1,4 @@
-package service;
+package pro.sky.courcework.service;
 
 import java.util.ArrayList;
 
@@ -8,7 +8,6 @@ import pro.sky.courcework.exeption.EmployeeAlreadyAddedException;
 import pro.sky.courcework.exeption.EmployeeNotFoundException;
 import pro.sky.courcework.exeption.EmployeeStorageIsFullException;
 
-import java.util.Collection;
 import java.util.List;
 
 @Service
